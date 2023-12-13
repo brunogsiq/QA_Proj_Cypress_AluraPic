@@ -1,1 +1,1 @@
-# QA_Proj_Cypress_AluraPic
+# QA_Prac_Cypress_Alura_Pic.
