@@ -1,21 +1,27 @@
-const { defineConfig } = require('cypress')
+const { defineConfig } = require("cypress");
 
-module.exports = defineConfig({
-  reporter: 'mochawesome',
-  reporterOption: {
-    reportDir: 'cypress/report/mochawesome-report',
-    overwrite: true,
-    html: true,
-    json: false,
-    timestamp: 'mmddyyyy_HHMMss',
-  },
-  e2e: {
-    baseUrl: 'https://alura-fotos.herokuapp.com',
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
-    setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config)
+module.exports = defineConfig(
+{
+    viewportWidth: 1300,
+    viewportHeight: 800,
+    video: true,
+    chromeWebSecurity: false,
+    reporter: "mochawesome",
+    reporterOptions: {
+        reportDir: 'cypress/report',
+        overwrite: true,
+        html: true,
+        json: false,
+        timestamp: 'dd-mm-yyyy_HH-MM-ss'
     },
-    
-  },
-})
+    e2e: {
+        defaultCommandTimeout: 9000,
+        experimentalRunAllSpecs: true,
+        hideXHRInCommandLog: true,
+        baseUrl: "https://alura-fotos.herokuapp.com",
+        //Aqui ficarão todos os meus testes:
+        setupNodeEvents(on, config) {
+          // implement node event listeners here
+        },
+    },
+});
