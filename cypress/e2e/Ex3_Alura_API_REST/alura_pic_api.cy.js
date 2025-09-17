@@ -1,5 +1,7 @@
-describe('Buscar fotos e dados', () => {
-    it('Buscar fotos do Flavio', () => {
+describe('Buscar fotos e dados', () =>
+{
+    it('Buscar fotos do Flavio', () =>
+    {
         //Para fazer uma requisição
         cy.request({
             method: 'GET',
@@ -9,10 +11,11 @@ describe('Buscar fotos e dados', () => {
             expect(res.body).is.not.empty
             expect(res.body[0]).to.have.property('description')
             expect(res.body[0].description).to.be.equal('Farol iluminado')
-        })
-    })
+        });
+    });
 
-    it('Fazer login do Flavio', () => {
+    it('Fazer login do Flavio', () =>
+    {
         cy.request({
             method: 'POST',
             url: 'https://apialurapic.herokuapp.com/user/login',
@@ -24,7 +27,6 @@ describe('Buscar fotos e dados', () => {
             expect(res.body.id).to.be.equal(1)
             expect(res.body).to.have.property('email')
             expect(res.body.email).to.be.equal("flavio@alurapic.com.br")
-        })
-    })
-
-})
+        });
+    });
+});

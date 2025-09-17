@@ -1,3 +1,8 @@
+/// <reference types="cypress" /> 
+
+import 'cypress-wait-until';
+
+import { nomeTela } from '../../pages/elementos';
 
 Cypress.Commands.add('login', (nome, senha) => {
     cy.get('input[formcontrolname = "userName"]').type(nome);
